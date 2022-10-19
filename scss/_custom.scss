@@ -1,0 +1,19 @@
+/** es.1 **/
+// incluso in style.scsse in style.scss
+.d-block {
+  display: block;
+}
+
+/** es.2 **/
+
+$textColor: blue;
+@mixin color {
+  color: $textColor;
+  background-color: currentColor;
+}
+
+@mixin layout($position: null, $padding: null, $margin: null) {
+  position: $position;
+  margin: $margin;
+  padding: $padding;
+}
