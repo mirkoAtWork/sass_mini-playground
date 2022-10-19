@@ -8,7 +8,6 @@
 @use 'theme';
 @use 'custom';
 
-
 .d-inline {
     display: inline;
 }
@@ -25,3 +24,6 @@
 $cc: calcCol(9.8);
 @debug $cc;
 
+
+ @import 'lists-example';
+@import 'map-example';

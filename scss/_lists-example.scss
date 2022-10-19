@@ -1,0 +1,37 @@
+
+
+/** list **/
+
+//  si puo usare le funzioni di "libreria" per le liste 
+// sia globalmente che con list. es. list.nth(....
+// meglio usare la versione con namespace
+
+@use 'sass:list';
+
+
+// ACTUNG sono Immutability
+
+$emptyMapORList: (); //all maps count as lists;
+$colorList: [white,  red, blue]; // non mi piace anche se come js;
+$fontList: (10px 18px 20px);
+$borderList: (1px, solid, red); // il mio preferito;
+
+
+
+$extendedFontList: list.join(4px, $fontList, auto, false);
+@debug list.nth($extendedFontList,1); // sono "arrayLike" 1 based ;-(.. però come per il pseudo selettore css :nth-child()
+$extendedFontList2: list.set-nth($extendedFontList,2,-1px);
+@debug $extendedFontList;
+@debug $extendedFontList2;
+
+
+//  da provare una volta nella vita:
+/*
+list.separator
+list.index
+list.is-bracketed
+list.length
+list.zip
+list.slash
+
+*/

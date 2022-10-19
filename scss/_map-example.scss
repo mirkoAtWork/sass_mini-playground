@@ -1,0 +1,50 @@
+/** map **/
+@use 'sass:map';
+
+// ACTUNG sono Immutability
+
+$colors: (primary: blue, secondary: darkgray, warn: red);
+$emptyMapORList: (); //all maps count as lists;
+// @debug map-get($colors, primary); 
+@debug map.get($colors, primary);
+$greenPrimaryMaps: map.set($colors, primary,green);
+@debug #{"my colors Maps"} $colors $greenPrimaryMaps;
+
+// mergo
+$mergedColorsMap: map.merge($colors, map.set($greenPrimaryMaps, default, black));
+@debug #{"mergeColorsMap: "} $mergedColorsMap;
+
+
+// stampa n classi che si chiamano text-primary{ color: blue;} ecc
+@each $cKey, $cValue in $colors {
+    @debug #{"chiave:"} $cKey  #{", valore:"} $cValue;
+    .text-#{$cKey} {
+        color: #{$cValue}
+    }
+}
+
+
+// recursive merge
+$helvetica-light: (
+  "weights": (
+    "lightest": 100,
+    "light": 300
+  )
+);
+$helvetica-heavy: (
+  "weights": (
+    "medium": 500,
+    "bold": 700
+  )
+);
+
+@debug map.deep-merge($helvetica-light, $helvetica-heavy);
+
+//  da provare una volta nella vita:
+/*
+map.has-key
+map.keys
+map.values
+map.remove
+map.deep-remove
+*/
