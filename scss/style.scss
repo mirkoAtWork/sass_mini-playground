@@ -12,3 +12,16 @@
 .d-inline {
     display: inline;
 }
+
+
+@function calcCol($colsNumber: 1) {
+    $colWidth: 20px;
+    $colresult: $colWidth * $colsNumber; 
+    @if ($colresult > 200px) {
+        @return 200px;
+    };
+    @return $colresult;
+}
+$cc: calcCol(9.8);
+@debug $cc;
+
