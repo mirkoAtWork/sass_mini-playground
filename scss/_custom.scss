@@ -1,12 +1,12 @@
-/** es.1 **/
-// incluso in style.scsse in style.scss
+/** es.1 _custom.scss**/
+// incluso in style.scss e in style.scss
 .d-block {
   display: block;
 }
 
-/** es.2 **/
+/** es.2  _custom.scss**/
 
-$textColor: blue;
+// mixin definiti sempre prima dell'uso
 @mixin color {
   color: $textColor;
   background-color: currentColor;
@@ -16,4 +16,10 @@ $textColor: blue;
   position: $position;
   margin: $margin;
   padding: $padding;
+}
+
+
+$textColor: blue;
+.colors {
+  @include color;
 }

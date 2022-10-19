@@ -1,12 +1,13 @@
 
-/** es.1 **/
+/** es.1  style.scss**/
 // nota che .d-block presente in _custom.scss viene "importato" nel compilato una sola volta
 //  usando @import invece viene importato piu volte
 
 // @import 'custom';
 // @import 'theme.scss';
+@use 'theme';
 @use 'custom';
-@use 'theme.scss';
+
 
 .d-inline {
     display: inline;

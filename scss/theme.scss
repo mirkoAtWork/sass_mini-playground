@@ -1,7 +1,8 @@
-/** es.1 **/
+/** es.1 theme.scss **/
 // incluso in style.scss
-@use 'custom';
+@forward 'custom';
+@use 'custom' as c;
 
 .text{
-    color: red;
+    color: c.$textColor;
 }
